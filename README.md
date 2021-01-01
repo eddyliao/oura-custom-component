@@ -16,6 +16,7 @@ The component sensors with sleep data for previous days from [Oura Ring](https:/
 1. You will be redirected to Home-Assistant where the code information will be captured and exchanged for the token. If the redirect fails:
     *  Verify that your [http integration](https://www.home-assistant.io/integrations/http/) and base url are configured correctly.
     *  Verify that you have added your Home-Assistant URL to your Oura Application in the Redirect URIs, and it contains not just the domain/base url, but the full path (i.e. including `/oura/oauth/setup`). See `Configuration` > `How to get client id and client secret`.
+    *  Try turning on "check Allow server-side authentication (grant-type code)" in the application section
 
 1. Oura component will exchange the code for a token and update on the next schedule. If you want, you can force a sync from `Developer Tools` > `Services` > Service: `homeassistant.update_entity` + Entity: the Oura sensor and calling the service once (or twice after a break).
     *  If the entity is not updating, check your logs for any potential errors.
